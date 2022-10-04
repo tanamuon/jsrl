@@ -1,0 +1,69 @@
+body {
+	background: grey;
+}
+button {
+	background: #806517;
+}
+.screen {
+	position: relative;
+	height: 600px;
+	width: 50em;
+}
+.overlay-permanent {
+/* 	position:absolute; */
+	background: black;
+	width: 800px;
+	margin: 5px;
+/* 	max-height: 6em; */
+	color: white;
+	z-index: 8;
+	overflow: hidden;
+}
+.screen #game {
+	position:absolute;
+}
+.status {
+/* 	position: absolute; */
+	margin: 0;
+	z-index:10;
+}
+.screen .inventory {
+	position:absolute;
+	z-index:9;
+	color: white;
+	background-color: rgba(100,100,100,0.6);
+	bottom: 25%;
+	top: 15%;
+	left: 7%;
+	width: 30vw;
+	height: 20vw;
+	visibility: hidden;
+}
+.screen .inventory .inventoryButton {
+	z-index: 20;
+	background-color: green;
+/* 	border: none; */
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.buttonRow {
+	display: block;	
+}
+.horizontal-container {
+	background: black;
+	display: flex;
+	flex-direction: row;
+}
+.vertical-container {
+	display: flex;
+	flex-direction: column;
+}
+#messages-all {
+/* 	max-height: 6em; */
+	margin: 0;
+	overflow: scroll;
+    white-space:pre-wrap;
+	word-wrap: normal;
+	display: flex;
+	flex-direction: column-reverse;
+}

@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>A work-in-progress roguelike</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="game.css">
+	</head>
+	<body>
+	<div class="vertical-container">
+		<div class="screen">
+			<div id="game"></div>
+			<div class="inventory"></div>
+		</div>
+		
+		
+		<div id="not-game" class="horizontal-container">
+			
+			<div class="horizontal-container">
+				<div class="vertical-container">
+					<button id="top-left">↖ (q)</button>
+					<button id="left">← (a)</button>
+					<button id="bottom-left">↙ (z)</button>
+				</div>
+				<div class="vertical-container">
+					<button id="up">↑ (w)</button>
+					<button id="wait">__ (x)</button>
+					<button id="down">↓ (s)</button>
+				</div>
+				<div class="vertical-container">
+					<button id="top-right">↗ (e)</button>
+					<button id="right">→ (d)</button>
+					<button id="bottom-right">↘ (c)</button>
+				</div>
+				
+				<div class="vertical-container">
+					<button id="inv-show">(i)nventory</button>
+					<button id="get-item">pick up (g)</button>
+					<button id="interact">interac(t)</button>
+					<button id="character-btn">character</button>
+					<button id="ng">new game</button>
+				</div>
+			</div>
+			
+			<div id="msg-holder" class="overlay-permanent">
+				<pre id="hp" class="status"></pre>
+				<pre id="messages-all" class="messages"></pre>
+			</div>
+			
+		</div>
+		<script src="rot.js"></script><!-- https://github.com/ondras/rot.js/blob/master/license.txt -->
+		<script src="game.js"></script>
+	</div>
+	</body>
+</html>
