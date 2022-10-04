@@ -1393,10 +1393,10 @@ var unitTypes = {
 };
 var itemTypes = {
 	hpPotion:{name:'health potion', vis:{c:'!', fg:"red"}, equippable: false, type:"consumable", usable: [{stat:'chp', percentage:false, amount:10, everyTurn:false, ends:true, endsAfter:1, permanent:true}], d:[1]},
-	regenPotion:{name:'regen potion', vis:{c:'!', fg:"pink"}, equippable: false, type:"consumable", usable: [{stat:'chp', percentage:false, amount:1, everyTurn:true, ends:true, endsAfter:10, permanent:true}], d:[1]},
-	poisonPotion:{name:'poison potion', vis:{c:'!', fg:"green"}, equippable: false, type:"consumable", usable: [{stat:'chp', percentage:false, amount:-1, everyTurn:true, ends:true, endsAfter:10, permanent:true}], d:[1]},
-	strengthPotion:{name:'strength potion', vis:{c:'!', fg:"white"}, equippable: false, type:"consumable", usable: [{stat:'str', percentage:false, amount:5, everyTurn:false, ends:true, endsAfter:10, permanent:false}], d:[1]},
-	resiliencePotion:{name:'resilience potion', vis:{c:'!', fg:"white"}, equippable: false, type:"consumable", usable: [{stat:'res', percentage:false, amount:5, everyTurn:false, ends:true, endsAfter:10, permanent:false}], d:[1]},
+	regenPotion:{name:'regen potion', vis:{c:'!', fg:"green"}, equippable: false, type:"consumable", usable: [{stat:'chp', percentage:false, amount:1, everyTurn:true, ends:true, endsAfter:10, permanent:true}], d:[1]},
+// 	poisonPotion:{name:'poison potion', vis:{c:'!', fg:"green"}, equippable: false, type:"consumable", usable: [{stat:'chp', percentage:false, amount:-1, everyTurn:true, ends:true, endsAfter:10, permanent:true}], d:[1]},
+	strengthPotion:{name:'strength potion', vis:{c:'!', fg:"blue"}, equippable: false, type:"consumable", usable: [{stat:'str', percentage:false, amount:5, everyTurn:false, ends:true, endsAfter:10, permanent:false}], d:[1]},
+	resiliencePotion:{name:'resilience potion', vis:{c:'!', fg:"brown"}, equippable: false, type:"consumable", usable: [{stat:'res', percentage:false, amount:5, everyTurn:false, ends:true, endsAfter:10, permanent:false}], d:[1]},
 	
 // 	mhpPotion:{name:'vitality potion', vis:{c:'!', fg:"red"}, equippable: false, type:"consumable", usable: [{stat:'mhp', percentage:false, amount:10, everyTurn:false, ends:true, endsAfter:10, permanent:false},
 // 	{stat:'chp', percentage:false, amount:10, everyTurn:false, ends:true, endsAfter:10, permanent:false}],
@@ -1464,10 +1464,12 @@ document.getElementById("inv-show").onclick = function () {
 	game.switchScreen(game.oblist.iscreen);
 }
 document.getElementById("get-item").onclick = function () {
-	player.interact();
+	player.delay(player.getItem());
+	game.turn()
 }
 document.getElementById("interact").onclick = function () {
-	player.getItem();
+	player.delay(player.interact());
+	game.turn()
 }
 document.getElementById("ng").onclick = function () {
 	game.killPlayer();
